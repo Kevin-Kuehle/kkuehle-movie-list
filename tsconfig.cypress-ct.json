@@ -5,10 +5,13 @@
     "src/**/*",
     "src/**/*.vue",
     "cypress/support/component.*",
-    "cypress/support/commands.ts"
+    "cypress/support/commands.ts",
+    "@components/**/*",
+    "@views/**/*"
   ],
   "exclude": [],
   "compilerOptions": {
-    "composite": true
+    "composite": true,
+    "allowJs": true
   }
 }

@@ -1,7 +1,6 @@
 <template>
   <template v-if="movieStore.movieList.length > 0">
     <div @scroll="handleScrolling" ref="movieListRef" class="c-movie-list">
-      {{ movies }}
       <template v-for="movie in movieStore.movieList" :key="movie.imdbID">
         <MovieListItem :movie="movie"></MovieListItem>
       </template>
@@ -15,8 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import { MovieListItem } from '@components'
-import { useMovieStore } from '@stores'
+import { MovieListItem } from '@/components'
+import { useMovieStore } from '@/stores'
 import { ref, inject, watch } from 'vue'
 
 const movieStore = useMovieStore()
@@ -24,9 +23,14 @@ const movieListRef = ref<HTMLElement | null>(null)
 
 // handle scrolling to load more movies
 function handleScrolling() {
-  const maxScroll = movieListRef.value?.scrollHeight
-  const currentScroll = movieListRef.value?.scrollTop + movieListRef.value?.clientHeight
-  const scrollTrigger = Math.ceil(maxScroll * 0.9)
+  const maxScroll: number = movieListRef.value?.scrollHeight || 0
+
+  let currentScroll: number = 0
+  if (movieListRef.value?.scrollTop) {
+    currentScroll = movieListRef.value?.scrollTop + movieListRef.value?.clientHeight
+  }
+
+  const scrollTrigger: number = Math.ceil(maxScroll * 0.9) || 0
 
   if (!movieStore.loadingPage && currentScroll >= scrollTrigger) {
     movieStore.appendNextPage()
@@ -34,7 +38,7 @@ function handleScrolling() {
 }
 
 // inject the resetList ref from the parent component
-const resetList = inject('resetList')
+const resetList = ref(inject('resetList'))
 
 // after click search button, reset the scroll position to top
 function reset() {

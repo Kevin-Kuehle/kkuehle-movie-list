@@ -6,7 +6,7 @@ const baseUrl = `https://www.omdbapi.com/?apikey=${API_KEY}`
 
 export const useMovieStore = defineStore('movie', {
   state: () => ({
-    movies: [],
+    movies: [] as Array<any>,
     totalResults: 0,
     loadedPages: 0,
     maxPages: null as null | number,
@@ -57,7 +57,7 @@ export const useMovieStore = defineStore('movie', {
             this.resetStats()
           }
         }
-      } catch (error) {
+      } catch (error: any) {
         throw new Error(error)
       }
     },
@@ -72,7 +72,7 @@ export const useMovieStore = defineStore('movie', {
       this.year = ''
     },
 
-    async appendNextPage(searchTerm: string, year: string) {
+    async appendNextPage() {
       if (this.loadingPage) {
         return
       }

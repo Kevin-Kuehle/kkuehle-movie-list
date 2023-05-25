@@ -10,17 +10,12 @@
   </template>
 </template>
 <script setup lang="ts">
-import { ref, defineProps, beforeMount, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { MovieDetail } from '@components'
+import { MovieDetail } from '@/components'
 
 const route = useRoute()
-
-// get id from route
-
-const movieDetail = ref(null)
-
-// get id from route
+const movieDetail: any = ref(null)
 
 onMounted(async () => {
   const detailedMovieData = await fetch(
