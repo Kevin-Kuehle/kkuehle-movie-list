@@ -18,7 +18,10 @@
   </template>
   <template v-else>
     <div class="c-movie-list__loading">
-      <p>No Movies found, pls search 🔍 a movie by title</p>
+      <p>
+        No Movies found, <br />
+        pls search 🔍 a movie by title
+      </p>
     </div>
   </template>
 </template>
@@ -123,6 +126,7 @@ watchEffect(() => {
 .c-movie-list__loading {
   text-align: center;
   font-size: 1.4rem;
+  padding: 0.5rem;
 
   p {
     text-transform: uppercase;

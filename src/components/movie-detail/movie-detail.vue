@@ -91,7 +91,7 @@ function goBack() {
   flex-flow: row nowrap;
   gap: 20px;
   padding: 10px;
-  background-color: rgb(224, 224, 224);
+  // background-color: rgb(224, 224, 224);
 
   @media screen and (max-width: 768px) {
     flex-flow: column nowrap;
@@ -119,7 +119,7 @@ function goBack() {
 }
 
 .c-movie-detail__actions {
-  padding: 1rem 0;
+  padding: 1rem 10px;
   .button {
     padding: 12px 16px;
     color: white;

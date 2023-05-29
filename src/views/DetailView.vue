@@ -1,6 +1,8 @@
 <template>
   <template v-if="movieDetail">
-    <MovieDetail :movie="movieDetail" />
+    <section class="section section__detail-view">
+      <MovieDetail :movie="movieDetail" />
+    </section>
   </template>
 
   <template v-else>
@@ -27,3 +29,11 @@ onMounted(async () => {
   movieDetail.value = detailedMovieData
 })
 </script>
+
+<style scoped lang="scss">
+.section {
+  &__detail-view {
+    padding: 2rem 20px;
+  }
+}
+</style>
