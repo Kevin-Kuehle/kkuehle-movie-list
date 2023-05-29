@@ -99,7 +99,7 @@ import { IconGithub } from '@icons'
         display: grid;
         justify-items: center;
         grid-template: 100% / repeat(8, 1fr);
-        gap: 0 15px;
+        gap: 25px 15px;
 
         @media screen and (max-width: 1750px) {
           grid-template: auto / repeat(4, 1fr);
