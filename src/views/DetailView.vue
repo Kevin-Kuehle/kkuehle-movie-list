@@ -19,7 +19,7 @@ const movieDetail: any = ref(null)
 
 onMounted(async () => {
   const detailedMovieData = await fetch(
-    `http://www.omdbapi.com/?apikey=${'95880f5'}&i=${route.params.id}`
+    `https://www.omdbapi.com/?apikey=${'95880f5'}&i=${route.params.id}`
   )
     .then((res) => res.json())
     .then((data) => data)
