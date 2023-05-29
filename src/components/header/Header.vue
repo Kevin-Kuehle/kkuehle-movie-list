@@ -27,7 +27,7 @@ function changeView(view) {
   background: var(--color-header-background);
   display: flex;
   flex-flow: row nowrap;
-
+  padding: 0.6rem 0;
   &__inner {
     flex: 1;
     display: grid;
@@ -35,15 +35,25 @@ function changeView(view) {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+
+    @media (width <= 850px) {
+      // without auto expand
+      grid-template: auto / repeat(4, minmax(0, 1fr));
+      padding: 0 10px;
+    }
   }
 
   &__logo {
     grid-area: 1/1 / 2/2;
     color: white;
-    margin-right: auto;
     padding: 0 4rem;
     font-size: 1.9rem;
     font-weight: bold;
+
+    @media (width <= 850px) {
+      font-size: 1.3rem;
+      padding: 0;
+    }
 
     &:first-letter {
       color: var(--color-accent);
@@ -62,6 +72,7 @@ function changeView(view) {
   margin-right: 1rem;
   padding: 0.5rem 1.5rem;
   width: 90px;
+  color: var(--color-text);
 
   &:last-child {
     margin-right: 0;

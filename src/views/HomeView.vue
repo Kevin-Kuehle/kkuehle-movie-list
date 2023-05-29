@@ -94,6 +94,8 @@ import { IconGithub } from '@icons'
     }
 
     &__movies {
+      overflow: hidden;
+
       &__teaser {
         flex: 1;
         display: grid;
@@ -112,6 +114,12 @@ import { IconGithub } from '@icons'
         &__image {
           height: 100%;
           max-height: 280px;
+
+          @media screen and (max-width: 440px) {
+            // 40px padding left and right
+            width: calc(50vw - 40px);
+            height: auto;
+          }
         }
       }
     }

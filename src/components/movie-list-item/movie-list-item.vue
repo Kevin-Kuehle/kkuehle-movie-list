@@ -84,6 +84,10 @@ async function openDetail() {
       font-weight: bold;
       text-transform: uppercase;
 
+      @media (width <= 768px) {
+        font-size: 0.6rem;
+      }
+
       h2 {
         white-space: pre-line;
         word-wrap: break-word;
