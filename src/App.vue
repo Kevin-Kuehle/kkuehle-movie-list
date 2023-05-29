@@ -15,8 +15,7 @@ import Footer from '@components/footer/Footer.vue'
 .main {
   flex: 1;
   width: 100%;
-  max-width: var(--width-content);
-  align-self: center;
-  padding: 20px;
+  display: flex;
+  flex-flow: column wrap;
 }
 </style>

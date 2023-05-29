@@ -1,12 +1,14 @@
-// colors
+// colors settings
 :root {
-  --color-background: #fff;
-  --color-text: #212121;
-  --color-primary: #1e88e5;
-  --color-secondary: #ff9800;
-  --color-accent: #ff4081;
-  --color-header-background: #301872;
-  --color-footer-background: #301872;
+  --color-primary: hsl(208, 79%, 51%);
+  --color-primary-dark: hsl(208, 79%, 31%);
+  --color-secondary: hsl(36, 100%, 50%);
+  --color-accent: hsl(340, 100%, 63%);
+  --color-text: hsl(0, 0%, 13%);
+
+  --color-background: hsl(var(), 0%, 100%);
+  --color-header-background: hsl(256, 65%, 27%);
+  --color-footer-background: hsl(256, 65%, 27%);
 }
 
 // widths
