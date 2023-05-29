@@ -1,6 +1,6 @@
 ## Movie-List
 
-- [Link to APP](http://movielist.kkuehle.s3-website.eu-central-1.amazonaws.com)
+- [Link to APP](https://www.ml.kkuehle.link)
 
 ### DESCRIPTION
 
