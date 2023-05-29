@@ -8,10 +8,10 @@
         <h2>{{ movie.Title }}</h2>
       </div>
       <div class="c-list-item__infos__year">
-        <h3>{{ movie.Year }}</h3>
+        <p>{{ movie.Year }}</p>
       </div>
       <div class="c-list-item__infos__type">
-        <h3>{{ movie.Type }}</h3>
+        <p>{{ movie.Type }}</p>
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@ async function openDetail() {
   transition: background-color 0.1s ease-in-out;
 
   &:hover {
-    background-color: #f5f5f5;
+    background-color: var(--color-accent-light);
     cursor: pointer;
 
     > * img {
@@ -58,23 +58,52 @@ async function openDetail() {
   &__preview {
     width: 100%;
     height: 240px;
-    background-color: grey;
+    background-color: white;
     flex: 0 0;
     display: flex;
     align-content: center;
     justify-content: center;
 
     img {
+      flex: 0 0 auto;
       width: auto;
-      height: 100%;
+      max-width: 160px;
       object-fit: contain;
+      margin-bottom: auto;
       filter: grayscale(90%);
     }
   }
 
-  &___infos {
+  &__infos {
     display: flex;
     flex-flow: column nowrap;
+
+    &__title {
+      font-size: 0.8rem;
+      line-height: 180%;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      h2 {
+        white-space: pre-line;
+        word-wrap: break-word;
+      }
+    }
+
+    &__year {
+      font-size: 0.9rem;
+      line-height: 180%;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &__type {
+      font-size: 0.8rem;
+      line-height: 180%;
+      font-weight: bold;
+      color: var(--color-accent);
+      text-transform: uppercase;
+    }
   }
 }
 </style>
